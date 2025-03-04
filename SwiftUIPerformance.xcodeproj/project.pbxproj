@@ -129,12 +129,12 @@
 				7023008F2C115A5300A1266B /* ContentView.swift */,
 				702300712C0ECBD900A1266B /* ProblemView.swift */,
 				702300762C0EE83A00A1266B /* RemoveViewModelDependency.swift */,
+				7023008B2C1052D100A1266B /* IdentityView.swift */,
 				7023007D2C0FDC8B00A1266B /* PassNoExtraData.swift */,
 				7023007F2C102ACE00A1266B /* PassNoExtraData2.swift */,
 				702300832C10389200A1266B /* WrapperExample.swift */,
 				702300852C103F1C00A1266B /* WrapperExample2.swift */,
 				702300892C104EEF00A1266B /* ObservationView.swift */,
-				7023008B2C1052D100A1266B /* IdentityView.swift */,
 				702300482C0EBDF400A1266B /* Assets.xcassets */,
 				7023004A2C0EBDF400A1266B /* Preview Content */,
 			);

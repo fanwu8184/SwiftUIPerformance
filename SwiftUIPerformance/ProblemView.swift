@@ -1,58 +1,56 @@
 import SwiftUI
 
 struct ProblemView: View {
-  @StateObject
-  private var viewModel = FruitViewModel()
-  
-  var body: some View {
-    VStack {
-      ScrollView {
-        TextField("Title", text: $viewModel.title)
-          .textFieldStyle(.roundedBorder)
-          .multilineTextAlignment(.center)
-        
-        ForEach(viewModel.fruits, id: \.self) { fruit in
-          RowView(fruit: fruit, viewModel: viewModel)
+    @StateObject private var viewModel = FruitViewModel()
+    
+    var body: some View {
+        VStack {
+            ScrollView {
+                TextField("Title", text: $viewModel.title)
+                    .textFieldStyle(.roundedBorder)
+                    .multilineTextAlignment(.center)
+                
+                ForEach(viewModel.fruits, id: \.self) { fruit in
+                    RowView(fruit: fruit, viewModel: viewModel)
+                }
+                
+                Button("ADD New") {
+                    viewModel.addNewFruit()
+                }
+            }
+            
+            Text("ProblemView")
         }
-        
-        Button("ADD New") {
-          viewModel.addNewFruit()
-        }
-      }
-      
-      Text("ProblemView")
+        .padding()
     }
-    .padding()
-  }
 }
 
 fileprivate struct RowView: View {
-  let fruit: Fruit
-  @ObservedObject
-  var viewModel: FruitViewModel
-  
-  var body: some View {
-//    let _ = Self._printChanges()
+    let fruit: Fruit
+    @ObservedObject var viewModel: FruitViewModel
     
-    HStack {
-      VStack(alignment: .leading) {
-        Text(fruit.name)
-          .bold()
-        Text(fruit.description)
-      }
-      
-      Spacer()
-      
-      Button("UPDATE") {
-//        viewModel.update()
-      }
-      .buttonStyle(.borderedProminent)
+    var body: some View {
+//        let _ = Self._printChanges()
+        
+        HStack {
+            VStack(alignment: .leading) {
+                Text(fruit.name)
+                    .bold()
+                Text(fruit.description)
+            }
+            
+            Spacer()
+            
+            Button("Update Title") {
+                viewModel.update()
+            }
+            .buttonStyle(.borderedProminent)
+        }
+        .padding()
+        .testBackground()
     }
-    .padding()
-    .testBackground()
-  }
 }
 
 #Preview {
-  ProblemView()
+    ProblemView()
 }

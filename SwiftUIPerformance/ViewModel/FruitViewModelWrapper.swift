@@ -1,5 +1,5 @@
 import Foundation
 
 class FruitViewModelWrapper: ObservableObject {
-  var vm = FruitViewModel()
+    @Published var vm = FruitViewModel()
 }

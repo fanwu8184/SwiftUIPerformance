@@ -11,7 +11,7 @@ import SwiftUI
 struct SwiftUIPerformanceApp: App {
     var body: some Scene {
         WindowGroup {
-          IdentityView()
+            ContentView()
         }
     }
 }
