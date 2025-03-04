@@ -1,14 +1,15 @@
 import SwiftUI
 
 struct ObservationView: View {
-    @State var model = FruitObservation()
+    let model = FruitObservation()
+//    @State var model = FruitObservation()
     
     var body: some View {
         VStack {
             ScrollView {
-                TextField("Title", text: $model.title)
-                    .textFieldStyle(.roundedBorder)
-                    .multilineTextAlignment(.center)
+//                TextField("Title", text: $model.title)
+//                    .textFieldStyle(.roundedBorder)
+//                    .multilineTextAlignment(.center)
                 
                 ForEach(model.fruits, id: \.self) { fruit in
                     RowView(fruit: fruit, model: model)
@@ -22,9 +23,9 @@ struct ObservationView: View {
             List {
                 TextEditSession(model: model)
                 
-                Section("Date") {
-                    TextField("date", text: $model.date)
-                }
+//                Section("Date") {
+//                    TextField("date", text: $model.date)
+//                }
             }
             
             Text("ObservationView")
@@ -43,7 +44,7 @@ fileprivate struct RowView: View {
                 Text(fruit.name)
                     .bold()
                 Text(fruit.description)
-//                Text(model.date)
+//                Text(model.date) // you might want to put it in a subview
                 DateView(model: model)
             }
             
