@@ -11,6 +11,10 @@ struct RemoveViewModelDependency: View {
                     .multilineTextAlignment(.center)
                 
                 ForEach(viewModel.fruits, id: \.self) { fruit in
+                    /*
+                     A function reference is stable across renders because it’s just a pointer to a method on the viewModel object.
+                     A closure is a new instance. In Swift, closures capture their surrounding context, including references to objects like viewModel.
+                     */
                     RowView(fruit: fruit, action: viewModel.update)
 //                    RowView(fruit: fruit) { // this way doesn't solve the problem
 //                        viewModel.update()
