@@ -11,8 +11,8 @@ struct PassNoExtraData: View {
                     .multilineTextAlignment(.center)
                 
                 ForEach(viewModel.fruits, id: \.name) { fruit in
-//                    RowView(fruit: fruit, action: viewModel.update)
-                    RowView(name: fruit.name, action: viewModel.update)
+                    RowView(fruit: fruit, action: viewModel.update)
+//                    RowView(name: fruit.name, action: viewModel.update)
                 }
             }
             
@@ -29,17 +29,17 @@ struct PassNoExtraData: View {
 }
 
 fileprivate struct RowView: View {
-//    let fruit: Fruit
-    let name: String
+    let fruit: Fruit
+//    let name: String
     let action: () -> Void
     
     var body: some View {
         HStack {
-//            Text(fruit.name)
-//                .bold()
-            
-            Text(name)
+            Text(fruit.name)
                 .bold()
+            
+//            Text(name)
+//                .bold()
             
             Spacer()
             

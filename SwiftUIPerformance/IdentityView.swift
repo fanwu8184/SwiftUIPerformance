@@ -36,7 +36,7 @@ fileprivate struct RowView: View {
     let fruit: Fruit
     
     var body: some View {
-        let _ = Self._printChanges()
+        let _ = Self._printChanges() // might show @self changed
         
         HStack {
             VStack(alignment: .leading) {

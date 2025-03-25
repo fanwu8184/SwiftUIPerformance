@@ -16,7 +16,7 @@ struct RemoveViewModelDependency: View {
                      A closure is a new instance. In Swift, closures capture their surrounding context, including references to objects like viewModel.
                      */
                     RowView(fruit: fruit, action: viewModel.update)
-//                    RowView(fruit: fruit) { // this way doesn't solve the problem
+//                    RowView(fruit: fruit) {
 //                        viewModel.update()
 //                    }
                 }
